@@ -24,8 +24,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>ScenarioDiff</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +43,42 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    .grid-item {
+      border: 1px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .grid-item img {
+      max-width: 100%;
+    }
+
+    .image-container-ablation {
+        display: inline-block;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .small-image {
+      width: 200px;
+    }
+
+    .title-centered {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
 
@@ -52,26 +88,50 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">ScenarioDiff: Text-to-video Generation with Dynamic
+              Transformations of Scene Conditions</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                <a target="_blank">Yipeng Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Xin Wang</a><sup>1 2</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Hong Chen</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Chenyang Qin</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Yibo Hao</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Hong Mei</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank">Wenwu Zhu</a><sup>1 2</sup>,
+              </span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">
+                      <sup>1</sup> Department of Computer Science and Technology, Tsinghua University
+                      <!-- <br>Conferance name and year -->
+                    </span>
+                    <span class="author-block">
+                      <sup>2</sup> Beijing National Research Center for Information Science and Technology
+                    </span>
+                    <span class="author-block">
+                      <sup>3</sup> MoE Key Lab of High Confidence Software Technologies, Peking University
+                    </span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
-                  <div class="column has-text-centered">
+                  <!-- <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
@@ -80,10 +140,10 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,10 +151,10 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -102,10 +162,10 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -113,7 +173,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -124,12 +184,11 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -137,7 +196,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -148,7 +207,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            With the development of diffusion models, text-to-video generation has recently received significant attention and achieved remarkable success. However, existing text-to-video approaches suffer from the following weakness: i) they fail to control the trajectory of the subject as well as the process of scene transformations; ii) they can only generate videos with limited frames, failing to capture the whole transformation process. To address these issues, we propose the model named ScenarioDiff, which is able to generate longer videos with scene transformations. Specifically, we employ a spatial layout fuser to control the positions of subjects and the scenes of each frame. To effectively present the process of scene transformation, we introduce mixed frequency controlnet, which utilizes several frames of the generated videos to extend them to long videos chunk by chunk in an auto-regressive manner. Additionally, to ensure consistency between different video chunks, we propose a cross-chunk scheduling mechanism during inference. Experimental results demonstrate the effectiveness of our approach in generating videos with dynamic scene transformations.
           </p>
         </div>
       </div>
@@ -157,130 +216,200 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
 <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="image">
+          <img src="static/images/frame.png" alt="framework"/>
+        </div>
+        <div class="content has-text-centered">
+          <p>
+            The framework of ScenarioDiff. Our proposed method contains three main stages. The first stage is tuning the UNet with simulated videos which aims to learn the knowledge that how to change the scenes. The second stage is training the Mixed Frequency ControlNet which makes our method get the ability to generate long videos. During inference stage, we propose a cross chunk scheduling mechanism which utilizes the information of the previous chunk to make the video more consistency.
+          </p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 class="title is-3">Some Cases</h2>
+      </div>
+      <div class="container34">
+        <div class="grid-container">
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/riding.gif"/>
+              A person is riding a horse under the mountain from right to left.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/fly.gif"/>
+              A bird flies around many branches.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/moose.gif"/>
+              Some moose are walking in a meadow under the aurora borealis.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/duck.gif"/>
+              A duck is swimming in the pool and then walks ashore.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/tornado.gif"/>
+              A tornado swept through, sending two cars into the sky.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/boy.gif"/>
+              A boy kicks a ball into a pool of water and a dog runs over to it.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/dog.gif"/>
+              A dog is running from grass to beach.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/cloud.gif"/>
+              A cloud drifted in from the left and was blown to pieces by the wind after a while.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/running.gif"/>
+              A cat is running from a rock to street.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/wheat.gif"/>
+              A dog is running from the wheat field to a lake.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/tree.gif"/>
+              A tree in the wind.
+          </div>
+          <div class="grid-item">
+            <img class="img-in-c4" src="static/videos/fish.gif"/>
+              A clownfish goes up and down in the sea.
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Ablations</h2>
+    </div>
+
+    <!-- tuning -->
+    <div>
+      <div class="title-centered">
+        <p>Qualitative results when ScenarioDiff with and without tuning on the simulated dataset.</p>
+      </div>
+      <div class="container34 columns is-centered has-text-centered">
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/tuning/without.gif" alt="without finetuning" class="small-image"/>
+          <p> (a) without tuning </p>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/tuning/with.gif" alt="without finetuning" class="small-image"/>
+          <p> (b) with tuning </p>
         </div>
       </div>
     </div>
+
+    <!-- mixed frequency -->
+    <div>
+      <div class="title-centered">
+        <p>Qualitative results when ScenarioDiff with and without the components of mixed frequency controlnet.</p>
+      </div>
+      <div class="container34 columns is-centered has-text-centered">
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/mfc/withoutboth.gif" alt="without both" class="small-image"/>
+          <p> (a) without both </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/mfc/withoutmix.gif" alt="without mix" class="small-image"/>
+          <p> (b) without mixed init </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/mfc/without_refiner.gif" alt="without refiner" class="small-image"/>
+          <p> (c) without refiner </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/mfc/withall.gif" alt="with both" class="small-image"/>
+          <p> (d) with all </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- lambda  -->
+    <div>
+      <div class="title-centered">
+        <p>Qualitative results of different \( \hat{\lambda} \)</p>
+      </div>
+      <div class="container34 columns is-centered has-text-centered">
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/loss/0.gif" alt="lambda=0" class="small-image"/>
+          <p> (a) \( \hat{\lambda} \) = 0.00 </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/loss/1.gif" alt="lambda=0" class="small-image"/>
+          <p> (b) \( \hat{\lambda} \) = 0.25 </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/loss/2.gif" alt="lambda=0" class="small-image"/>
+          <p> (c) \( \hat{\lambda} \) = 0.50 </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/loss/3.gif" alt="lambda=0" class="small-image"/>
+          <p> (d) \( \hat{\lambda} \) = 0.75 </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/loss/4.gif" alt="lambda=0" class="small-image"/>
+          <p> (e) \( \hat{\lambda} \) = 1.00 </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- cross chunk schedule -->
+    <div>
+      <div class="title-centered">
+        <p>Qualitative results when ScenarioDiff with and without the components of cross-chunk scheduling.</p>
+      </div>
+      <div class="container34 columns is-centered has-text-centered">
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/cross/withoutall.gif" alt="without both" class="small-image"/>
+          <p> (a) without both </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/cross/withoutmix.gif" alt="without mix" class="small-image"/>
+          <p> (b) without mixed init </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/cross/without_reuse.gif" alt="without reuse" class="small-image"/>
+          <p> (c) without reuse </p>
+        </div>
+        <div class="image-container-ablation">
+          <img src="static/videos/ablation/cross/all.gif" alt="with all" class="small-image"/>
+          <p> (d) with all </p>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
+</div>
 </section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
